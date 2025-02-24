@@ -38,3 +38,7 @@ onPress={() => navigation.navigate("Details", { country: item })}
 Bunun için react-navigation paketi kurulmalı.
 
 Bu açıklamayı GitHub'daki README'ye veya kodun içine yorum olarak ekleyebilirsin! 🚀
+
+﻿# Ekran Goruntu
+ 
+![Image](https://github.com/user-attachments/assets/4c63cd7e-a995-461f-8a82-dc57ee325788)
