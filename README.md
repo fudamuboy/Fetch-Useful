@@ -1,43 +1,47 @@
 ﻿# Fetch-Useful
-📌 Kod Açıklaması
+ 
+🌍 React Native - Ülkeler Listesi Uygulaması
 
-    Veri Çekme (fetch)
-        useEffect içinde fetch("https://restcountries.com/v3.1/all") ile ülke verileri çekiliyor.
-        JSON formatına çevrilen veriler setCountries(data) ile countries state'ine kaydediliyor.
+Bu proje, React Native kullanarak REST Countries API ile ülkelerin listesini çekmeyi ve göstermeyi amaçlayan bir uygulamadır.
+🚀 Amaç & Kullanılan Teknikler
 
-    FlatList Kullanımı
-        data={countries} → FlatList, API'den gelen ülke verilerini alıyor.
-        renderItem={({ item }) => (...)} → Her ülke için bir kart oluşturuluyor.
+Bu proje, fetch API kullanımı ve FlatList ile veri gösterimi konularını öğretmek için hazırlanmıştır.
 
-    TouchableOpacity ile Tıklanabilir Kartlar
-        Kullanıcı bir ülkeye tıkladığında detaylara yönlendirilmesi için TouchableOpacity eklenmiş.
-        Ancak onPress içinde navigation.navigate("Details", { country: item }) eklenmemiş. Eğer başka bir ekrana gitmek isteniyorsa, React Navigation ile yönlendirme eklenmeli.
+    API'den veri çekme (fetch)
+    useState & useEffect kullanımı
+    FlatList ile listeleme
+    TouchableOpacity ile tıklanabilir öğeler
+    React Navigation ile sayfalar arası geçiş (isteğe bağlı)
 
-    Görsel ve Stil Kullanımı
-        Text ile ülke adı (item.name.common) ve başkent (item.capital) gösteriliyor.
-        Image içinde source={{ uri: item.flags.png }} ile ülke bayrağı ekleniyor.
-        StyleSheet ile güzel bir görüntü sağlanıyor.
+📡 Kullanılan API
 
-🛠 Hata & İyileştirme Önerileri
+Veriler, REST Countries API üzerinden çekilmektedir.
+🛠 Kurulum & Çalıştırma
 
-🔴 Hata: keyExtractor={(item) => item.id}
-✅ Çözüm: API'deki verilerde id yok. Bunun yerine "cca3" kullanılmalı:
+Projeyi çalıştırmak için aşağıdaki adımları izleyin:
 
-keyExtractor={(item) => item.cca3}
+1️⃣ Projeyi klonla:
 
-🔴 Hata: item.capital bazı ülkelerde eksik olabilir.
-✅ Çözüm: ?. operatörü kullanarak kontrol edilebilir:
+git clone https://github.com/fudamuboy/.git
+cd fetch-Useful
 
-<Text style={styles.capital}>{item.capital?.[0] || "Bilinmiyor"}</Text>
+2️⃣ Gerekli paketleri yükle:
 
-🔴 Hata: TouchableOpacity içinde onPress tanımlanmamış.
-✅ Çözüm: Eğer detay sayfasına gidilecekse:
+npm install
 
-onPress={() => navigation.navigate("Details", { country: item })}
+3️⃣ Uygulamayı çalıştır:
 
-Bunun için react-navigation paketi kurulmalı.
+npm start
 
-Bu açıklamayı GitHub'daki README'ye veya kodun içine yorum olarak ekleyebilirsin! 🚀
+veya
+
+expo start
+
+📌 Geliştirme Notları & Öneriler
+
+    Veri çekme sırasında hata kontrolü eklenebilir.
+    Detay sayfası eklenerek ülke bilgileri genişletilebilir.
+    API verileri bazen eksik olabiliyor, bu yüzden ?. operatörü kullanıldı.
 
 ﻿# Ekran Goruntu
  
